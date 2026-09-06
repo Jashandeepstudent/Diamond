@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* Palette drawn directly from the client's own product photography —
+     the pipe-stack putty gray, the coiled-rope green/marigold, and the
+     packaging's kraft-orange — not an invented industrial scheme. */
+  --color-charcoal: #1a2332;       /* primary dark base */
+  --color-charcoal-deep: #10161f;  /* darkest, footer */
+  --color-rope-green: #4c9a3f;     /* from the coiled strapping photo */
+  --color-rope-green-dark: #3a7830;
+  --color-marigold: #f2b705;       /* from the coiled strapping photo */
+  --color-putty: #d8d3c8;          /* from the pipe-stack photo, warm gray */
+  --color-kraft: #c97a4a;          /* from the packaging photo */
+  --color-offwhite: #faf9f6;
+  --color-slate: #5a6472;          /* secondary text on light */
+  --color-slate-light: #9aa4b0;    /* secondary text on dark */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-offwhite);
+  color: var(--color-charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Pipe-bore motif: a ring, literal to the product's cross-section,
+   used as the sole recurring structural device instead of a generic
+   divider or drop shadow. */
+.bore-ring {
+  border-radius: 9999px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-marigold);
+  outline-offset: 2px;
+}
